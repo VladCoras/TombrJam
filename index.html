@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
+	<head>
+		<title>TombrJam - alpha</title>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link rel="stylesheet" href="./css/style.css">
+	</head>
+	<body>
+		<div class="task-bar">
+			<img class="logo" src="./assets/images/tombrjam-logo.svg" width="32" height="32"></li>
+			<span class="js-title"></span>
+			<ul class="window-controls">
+				<li class="js-min-app">&#95;</li>
+				<li class="js-max-app">&square;</li>
+				<li class="js-exit-app">&times;</li>
+			</ul>
+		</div>
+
+		<script>window.$ = window.jQuery = require('./js/jquery.min.js');</script>
+		<script src="./js/global.js"></script>
+	</body>
 </html>

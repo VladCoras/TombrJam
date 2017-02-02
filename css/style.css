@@ -1,0 +1,25 @@
+* { margin:0; padding:0; font-family:"Raleway", sans-serif; font-weight:300; }
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+body { color:#000; font-size:16px; overflow-y:hidden; overflow-x:hidden; background-color:#aaa; background:url("../images/bak2.jpg"); background-repeat:no-repeat; background-size:100%; }
+h1, h2, h3, h4, h5 { font-weight:600; box-sizing:border-box; }
+a { text-decoration:none; transition:all 0.3s; }
+ul { list-style-type:none; }
+ul:after { content:""; display:block; clear:both; }
+img { display:block; border:none; }
+strong, b { font-weight:600; } 
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+
+/* ------------------ */
+/* Task bar */
+.task-bar { position:fixed; top:0; left:0; right:0; width:100%; background-color:#3d3d3d; }
+.task-bar { -webkit-user-select:none; -webkit-app-region:drag; }
+
+.task-bar .logo { position:relative; left:10px; }
+.task-bar .js-title { position:absolute; top:5px; left:50%; color:white; font-size:14px; font-weight:600; transform:translateX(-50%); }
+
+.task-bar .window-controls { position:absolute; top:0; right:10px; margin:0 -20px; } 
+.task-bar .window-controls:after { content:""; display:block; clear:both; }
+.task-bar .window-controls li { float:left; padding:0 10px; height:100%; color:white;  }
+/* ------------------ */

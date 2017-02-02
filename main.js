@@ -1,35 +1,30 @@
-const {app, BrowserWindow} = require("electron");
-const path = require("path");
-const url = require("url");
+/* -------------------------------------- */
+/* Electron framework stuff
+/* -------------------------------------- */
 
-let win; // TODO: let win be array for multiple windows
+var app = require('app');
+var BrowserWindow = require('browser-window'); 
 
-function createWindow() {
-	win = new BrowserWindow({width: 800, height: 600});
-	
-	win.loadURL(url.format({
-	    pathname: path.join(__dirname, 'index.html'),
-	    protocol: 'file:',
-	    slashes: true
-	}))
+var mainWindow = null;
 
-	win.webContent.openDevTools();
-
-	win.on('closed', () => {
-	    win = null
-	})
-}
-
-app.on('ready', createWindow);
-
-app.on('windows-all-closed', () => {
-	if (process.platform !== 'darwin') {
+app.on('window-all-closed', function() {
+	if (process.platform != 'darwin') {
 		app.quit();
 	}
 });
 
-app.on('activate', () => {
-	if (win === null) {
-		createWindow();
-	}
+app.on('ready', function() {
+	mainWindow = new BrowserWindow({width: 1000, height: 625, frame: false});
+
+	mainWindow.loadURL('file://' + __dirname + '/index.html');
+	mainWindow.webContents.openDevTools();
+	mainWindow.on('closed', function() {
+		mainWindow = null;
+	});
 });
+
+app.on('browser-window-created', function(e, window) {
+	window.setMenu(null);
+});
+/* -------------------------------------- */
+

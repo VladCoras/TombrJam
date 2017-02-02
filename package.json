@@ -1,5 +1,16 @@
 {
 	"name" : "TombrJam",
 	"version" : "0.0.1",
-	"main" : "main.js"
+	"main" : "main.js",
+	"description" : "Electron-based audio player",
+
+	"dependencies" : {},
+	"devDependencies": {
+    	"electron-prebuilt": "^0.35.2"
+	},
+	"scripts" : {
+		"start" : "electron main.js"
+	},
+	"author" : "VladC",
+	"license" : ""
 }
